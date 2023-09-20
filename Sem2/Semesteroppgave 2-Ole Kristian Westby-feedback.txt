@@ -1,0 +1,32 @@
+Assignment: Semesteroppgave 2
+Grade: 8.0
+General feedback:
+Runtime analysis:
+Her blir det vanskelig å se hvordan du kommer frem til kjøretiden. Du burde enten markere mer i koden hvilken kjøretid hver operasjon har, eller skriver mer utfyllende kommentarer i svar.md
+
+Code Quality:
+There are no comments explaining the functionality in your code, this makes it harder to read and less understandable. 
+It is good that you implement supporting methods, but when they have less descriptive names such as Vertex()  some comments are needed. Since there is description of these methods available in svar.md you wont lose points over this. Otherwise, good job. 
+
+Task 1 Minimum Spanning Tree:
+This is an exemplary implementation of the prims algorithm, with a time complexity of O(m log(m))
+
+LCA:
+This is a nice solution for task 2. Using a BSF to create a hashmap of depths makes it possible to find the lca in an efficient way. Good job!
+
+Comments:
+src/main/java/student/ProblemSolver.java:22:1: Det er lett å tro at denne itererer n ganger, siden vi gjør noe så lenge listen vår er mindre enn n.
+
+toSearch legger vi til kanter, så det kan være O(m) 
+src/main/java/student/ProblemSolver.java:24:1: Denne vil bare være false n ganger
+
+Hver gang den er true så gjør vi bare continue og ikke det som er på linje 28 og ned
+
+Fra linje 28 gjør vi noen konstant tid operasjoner, bortsett fra addAll()
+
+addAll() så legger vi til degree kanter til toSearch, som hver tar O(log m)
+
+Som Ståle forklarte over så blir O(n * degree * log m) -> O(2m * log m) -> O(m * log m) 
+src/main/java/student/ProblemSolver.java:42:1: denne blir bare brukt i mst, med en priority queue
+der er add funksjonen O(log m)
+src/main/java/student/ProblemSolver.java:103:1: Fin løsning! For å få 3 poeng må du ha O(n) kjøretid, noe du kan få ved å ikke bruke PriorityQueue

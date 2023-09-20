@@ -1,0 +1,23 @@
+Assignment: Semesteroppgave 1
+Grade: 4.0
+General feedback:
+Random Strategy:
+Du har en metode som bare velger de k første elementene i RandomStrategy, altså ikke tilfeldige roboter, som kjører O(k), dette gir deg 1 poeng. Du har ikke gitt en forklaring/implementering på hvordan assignRobots kan forbedres. Total 1 poeng
+
+BetterStrategy:
+Cool to implement a k-nearest method to select the robots. This is essensially an improvement on the closeststrategy and should improve your scores in many maps. Still it still suffers from the same problem that the closest strategy haves. Some robots risk to not get activated at all if they are too far away from the jobs. See map 6. Could this be solved?
+Also, I see that you select the jobs depending on how long they have been in the backlog. What is the resoning behind this? You should elaborate your ideas better in the documentation.
+
+Improvement on 3 maps gives 2 points. 
+
+Run Time Analysis:
+assignRobots() has loops running trough k selected robots not all n. One of them calls List.remove(). The running time then becomes O(n*k). 
+
+doJobs() is not done correct. See the solution for this. Both ClosetStrategy- and RandomStrategy.selectRobots() as incorrect as well.
+
+I would like some more explanation for your analysis so its easier to see what you have understood.  
+
+Closest strategy:
+Enkel og god løsning der du sorterer available robots. Se løsningsforslag for optimal løsning.
+
+Comments:
